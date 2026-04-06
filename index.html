@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Tapatio - Authentic Mexican Flavors</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+body {font-family: Arial, sans-serif; margin:0;}
+header {background:#E74C3C; color:white; padding:15px; text-align:center;}
+section {padding:20px;}
+button {padding:10px; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>El Tapatio 🌮</h1>
+</header>
+
+<section>
+<h2>Menu</h2>
+<button onclick="addToCart('Burrito',250)">Add Burrito ₹250</button><br>
+<button onclick="addToCart('Tacos',180)">Add Tacos ₹180</button>
+</section>
+
+<section>
+<h2>Cart</h2>
+<ul id="cartList"></ul>
+<p id="total"></p>
+<button onclick="checkout()">Checkout</button>
+</section>
+
+<section>
+<h2>Book Table</h2>
+<input type="text" id="name" placeholder="Name"><br>
+<input type="tel" id="phone" placeholder="Phone"><br>
+<button onclick="bookTable()">Book</button>
+</section>
+
+<script>
+let cart = [];
+
+function addToCart(item, price){
+    cart.push({item, price});
+    renderCart();
+}
+
+function renderCart(){
+    let list = document.getElementById("cartList");
+    let total = 0;
+    list.innerHTML = "";
+    cart.forEach(c=>{
+        total += c.price;
+        let li = document.createElement("li");
+        li.innerText = c.item + " - ₹" + c.price;
+        list.appendChild(li);
+    });
+    document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function checkout(){
+    Swal.fire("Order Placed!", "Your order is successful", "success");
+    cart = [];
+    renderCart();
+}
+
+function bookTable(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+
+    if(!name || !phone){
+        Swal.fire("Error","Fill all details","error");
+        return;
+    }
+
+    Swal.fire("Booked!", "Table reserved for " + name, "success");
+}
+</script>
+
+</body>
+</html>
