@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapman's BBQ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    h1,h2,h3 { font-family: 'Oswald', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-black text-white scroll-smooth" onload="AOS.init();">
+
+<!-- Navbar -->
+<nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur z-50 p-4 flex justify-between items-center">
+  <h1 class="text-xl font-bold text-orange-500">Chapman's BBQ</h1>
+  <div class="space-x-6 hidden md:block">
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="h-screen bg-cover bg-center flex items-center justify-center text-center"
+style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');">
+  <div class="bg-black bg-opacity-70 p-10 rounded-2xl mt-16">
+    <h1 class="text-6xl font-bold text-orange-500">Chapman's BBQ</h1>
+    <p class="mt-4 text-xl">Slow Smoked. Fire Cooked. Unforgettable Taste.</p>
+    <div class="mt-6 space-x-4">
+      <a href="#menu" class="bg-orange-500 px-6 py-3 rounded-lg text-black font-bold">View Menu</a>
+      <a href="tel:+18309985031" class="border border-orange-500 px-6 py-3 rounded-lg">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Menu -->
+<section id="menu" class="p-10">
+<h2 class="text-4xl font-bold text-center text-orange-500">Signature Menu</h2>
+
+<div class="grid md:grid-cols-3 gap-8 mt-10">
+
+<div data-aos="fade-up" class="bg-gray-900 rounded-xl overflow-hidden relative">
+<span class="absolute top-2 left-2 bg-orange-500 text-black px-3 py-1 text-xs font-bold rounded">🔥 Best Seller</span>
+<img src="https://images.unsplash.com/photo-1558030006-450675393462" class="w-full h-48 object-cover">
+<div class="p-5">
+<h3 class="text-xl font-bold">Smoked Brisket</h3>
+<p class="text-gray-400 text-sm">12-hour slow smoked</p>
+<p class="text-orange-500 font-bold">$18</p>
+</div>
+</div>
+
+<div data-aos="fade-up" class="bg-gray-900 rounded-xl overflow-hidden relative">
+<span class="absolute top-2 left-2 bg-yellow-400 text-black px-3 py-1 text-xs font-bold rounded">⭐ Popular</span>
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="w-full h-48 object-cover">
+<div class="p-5">
+<h3 class="text-xl font-bold">BBQ Ribs</h3>
+<p class="text-gray-400 text-sm">Juicy ribs</p>
+<p class="text-orange-500 font-bold">$22</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="p-10 text-center">
+<h2 class="text-4xl font-bold text-orange-500">Contact</h2>
+<p>📍 1430 N Main St, Monticello, IN 47960</p>
+<p>📞 +1 830-998-5031</p>
+</section>
+
+<footer class="text-center p-5">© 2026 Chapman's BBQ</footer>
+
+</body>
+</html>
